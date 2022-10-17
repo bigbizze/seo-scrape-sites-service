@@ -7,7 +7,7 @@ require('dotenv').config({
 
 export const IS_DEV = process.env.IS_DEV === "true";
 
-export const LEADFLUSH_API_URL = !IS_DEV
+export const SITE_API_URL = !IS_DEV
   ? `${process.env.LIVE_DOMAIN}/api/updateLeads`
   : "https://0.0.0.0:44386/api/updateLeads"
 

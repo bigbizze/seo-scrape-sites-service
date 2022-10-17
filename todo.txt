@@ -1,0 +1,8 @@
+
+
+2022-09-23 [x] -> we need some indication when website scraping results are still loading
+           [x] -> make sure that checking for google analytics is working correctly
+           [x] -> figure out mechanism for client not signed in to access results
+           -> move admin settings requests to websocket
+           [x] -> google analytics check is backwards
+           [x] -> we should still test for a website loading slowly, currently we're returning if they're https at all

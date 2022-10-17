@@ -1,0 +1,22 @@
+diff --git a/node_modules/bee-queue/index.d.ts b/node_modules/bee-queue/index.d.ts
+index e44a430..a6ff3ca 100644
+--- a/node_modules/bee-queue/index.d.ts
++++ b/node_modules/bee-queue/index.d.ts
+@@ -31,7 +31,7 @@ declare class BeeQueue<T = any> extends EventEmitter {
+ 
+   isRunning(): boolean;
+ 
+-  createJob<U extends T>(data: U): BeeQueue.Job<U>;
++  createJob<U>(data: T): BeeQueue.Job<U>;
+ 
+   getJob(jobId: string, cb: (job: BeeQueue.Job<T>) => void): void;
+   getJob(jobId: string): Promise<BeeQueue.Job<T>>;
+@@ -109,7 +109,7 @@ declare namespace BeeQueue {
+     progress: any;
+     status: 'created' | 'succeeded' | 'failed' | 'retrying';
+ 
+-    on(ev: 'succeeded', fn: (result: any) => void): this;
++    on(ev: 'succeeded', fn: (result: T) => void): this;
+     on(ev: 'retrying', fn: (err: Error) => void): this;
+     on(ev: 'failed', fn: (err: Error) => void): this;
+     on(ev: 'progress', fn: (progress: any) => void): this;
